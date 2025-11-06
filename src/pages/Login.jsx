@@ -13,7 +13,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const {backendUrl, setIsLoggedIn} = useContext(AppContext);
+    const {backendUrl, setIsLoggedIn, getUserData} = useContext(AppContext);
     const navigate = useNavigate();
 
     const onSubmitHandler = async (e) => {
@@ -35,6 +35,7 @@ const Login = () => {
                 const response = await axios.post(`${backendUrl}/login`, {email, password});
                 if(response.status === 200){
                     setIsLoggedIn(true);
+                    getUserData();
                     navigate("/");
                 }else{
                     toast.error("Email/Password is incorrect");
