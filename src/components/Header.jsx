@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <div className="text-center d-flex flex-column align-items-center justify-content-center py-5 px-3" style={{minHeight: "80vh"}}>
-            <img src={assets.header} alt="header" width={120} className="mb-4 " />      
+            <img src={assets.logo_home} alt="header" width={200} className="mb-4 " />      
 
             <h5 className="fw-semibold">
                 Hey {userData ? userData.name : 'Developer'} <span role="img" aria-label="wave">👋</span>
